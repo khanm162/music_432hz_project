@@ -1,7 +1,6 @@
 workflows:
   flutter-build:
     name: Flutter Build
-    platform: android
-    android:
-      debug: true
-      target: apk
+    build:
+      android:
+        target: apk
