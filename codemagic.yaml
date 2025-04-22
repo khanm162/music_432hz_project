@@ -10,13 +10,6 @@ workflows:
       - flutter-install
       - flutter-build:
           platform: android
-      - flutter-install:
-          platform: android
-      - android-signing:
-          keystore: /path/to/your/keystore.jks
-          key_alias: <key_alias>
-          key_password: <key_password>
-          store_password: <store_password>
       - upload-artifact:
           artifact_path: build/app/outputs/flutter-apk/app-release.apk
           target: /tmp/artifacts/
