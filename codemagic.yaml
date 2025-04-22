@@ -1,22 +1,22 @@
-name: Build iOS Application
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    name: Build iOS Release IPA
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.22.0"
-
-      - name: Install dependencies
-        run: flutter pub get
-
+workflows:
+  ios:
+    name: iOS workflow
+    max_build_duration: 60
+    instance_type: mac_mini
+    environment:
+      flutter: stable
+    scripts:
+      - flutter pub get
+      - flutter build ios --release
+    artifacts:
+      - build/ios/iphoneos/Runner.app
+  android:
+    name: Android workflow
+    max_build_duration: 60
+    environment:
+      flutter: stable
+    scripts:
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
