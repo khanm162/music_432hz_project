@@ -1,13 +1,7 @@
 workflows:
   flutter-build:
     name: Flutter Build
-    version: 1.0 # This should be a simple value (string or int), not a float
-    description: Build APK for Android
     platform: android
     android:
       debug: true
-      build_name: "1.0.0"
-      build_number: 1
-    triggers:
-      - event: push
-        branch: main
+      target: apk
