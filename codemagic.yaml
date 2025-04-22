@@ -2,5 +2,6 @@ workflows:
   flutter-build:
     name: Flutter Build
     scripts:
+      - cd music_432hz # Change to the correct project folder if needed
       - flutter pub get
       - flutter build apk
