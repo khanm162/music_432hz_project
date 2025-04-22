@@ -1,6 +1,6 @@
 workflows:
   flutter-build:
     name: Flutter Build
-    build:
-      android:
-        target: apk
+    scripts:
+      - flutter pub get
+      - flutter build apk
